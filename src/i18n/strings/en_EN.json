@@ -37,8 +37,8 @@
         "windows": "Windows (%(bits)s-bit)"
     },
     "powered_by_matrix": "Powered by Matrix",
-    "powered_by_matrix_with_logo": "Decentralised, encrypted chat &amp; collaboration powered by $matrixLogo",
+    "powered_by_matrix_with_logo": "Self-hosted, freedom focused encrypted chat network",
     "unknown_device": "Unknown device",
     "web_default_device_name": "%(appName)s: %(browserName)s on %(osName)s",
-    "welcome_to_element": "Welcome to Element"
+    "welcome_to_element": "Welcome to Greyman Network"
 }

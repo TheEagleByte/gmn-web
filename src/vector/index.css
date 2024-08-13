@@ -1,0 +1,4 @@
+/** Hide the server picker since we only allow one server */
+.mx_ServerPicker {
+  display: none !important;
+}

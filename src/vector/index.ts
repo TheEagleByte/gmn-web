@@ -30,6 +30,9 @@ import "./modernizr";
 // in webpack.config.js
 require("katex/dist/katex.css");
 
+// Import custom CSS
+require("./index.css");
+
 /**
  * This require is necessary only for purposes of CSS hot-reload, as otherwise
  * webpack has some incredible problems figuring out which CSS files should be
