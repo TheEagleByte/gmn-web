@@ -1,11 +1,9 @@
 name: Build and Release
 on:
-    push:
-        tags:
-            - "*"
+    workflow_dispatch:
 
 env:
-    VERSION: ${{ github.ref.replace('refs/tags/', '') }}
+    VERSION: ${{ github.event.inputs.version }}
 
 jobs:
     build-and-release:
@@ -30,6 +28,14 @@ jobs:
 
             - name: Build
               run: yarn build
+
+            - name: Create tag
+              run: git tag ${{ env.VERSION }}
+              if: env.VERSION != ''
+
+            - name: Push tag
+              run: git push origin ${{ env.VERSION }}
+              if: env.VERSION != ''
 
             - name: Create release
               id: create_release
