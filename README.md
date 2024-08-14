@@ -16,12 +16,12 @@ This project is based on the Element Web client, which is licensed under the Apa
 
 **Key points about our compliance with the Apache License 2.0:**
 
-- **Open Source:** This project remains open source and freely available under the same Apache 2.0 license as the original Element Web client.
-- **Attribution:** Proper attribution to the original Element Web client and its contributors is included, as required by the license.
-- **No Commercial Intent:** This project is not intended for profit. It is provided for free to the community as part of the Greyman Network.
-- **Modifications:** We have made modifications to the original source code, including rebranding and setting the default home server. These changes are clearly documented in the repository, in accordance with the license.
+-   **Open Source:** This project remains open source and freely available under the same Apache 2.0 license as the original Element Web client.
+-   **Attribution:** Proper attribution to the original Element Web client and its contributors is included, as required by the license.
+-   **No Commercial Intent:** This project is not intended for profit. It is provided for free to the community as part of the Greyman Network.
+-   **Modifications:** We have made modifications to the original source code, including rebranding and setting the default home server. These changes are clearly documented in the repository, in accordance with the license.
 
-*For more information on the Apache License 2.0, please refer to the [official documentation](https://www.apache.org/licenses/LICENSE-2.0).*
+_For more information on the Apache License 2.0, please refer to the [official documentation](https://www.apache.org/licenses/LICENSE-2.0)._
 
 ---
 
