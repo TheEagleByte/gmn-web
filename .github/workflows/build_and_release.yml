@@ -3,7 +3,7 @@ on:
     workflow_dispatch:
 
 env:
-    VERSION: ${{ github.event.inputs.version }}
+    VERSION: ${{ steps.read_package.outputs.version }}
 
 jobs:
     build-and-release:
@@ -22,6 +22,10 @@ jobs:
 
             # Workaround for yarn install timeouts, especially on Windows
             - run: yarn config set network-timeout 300000
+
+            - name: Read package.json
+              id: read_package
+              run: echo "::set-output name=version::$(node -p \"require('./package.json').version\")"
 
             - name: Install dependencies
               run: yarn install
