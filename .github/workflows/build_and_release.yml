@@ -22,7 +22,7 @@ jobs:
 
             - name: Read package.json
               id: read_package
-              run: echo "::set-output name=version::$(node -p \"require('./package.json').version\")"
+              run: echo "version=$(node -p 'require(\"./package.json\").version')" >> $GITHUB_ENV
 
             - name: Install dependencies
               run: yarn install
@@ -31,12 +31,12 @@ jobs:
               run: yarn build
 
             - name: Create tag
-              run: git tag ${{ steps.read_package.outputs.version }}
-              if: steps.read_package.outputs.version != ''
+              run: git tag ${{ env.version }}
+              if: env.version != ''
 
             - name: Push tag
-              run: git push origin ${{ steps.read_package.outputs.version }}
-              if: steps.read_package.outputs.version != ''
+              run: git push origin ${{ env.version }}
+              if: env.version != ''
 
             - name: Create release
               id: create_release
@@ -44,16 +44,16 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
-                  tag_name: ${{ steps.read_package.outputs.version }}
-                  release_name: Release ${{ steps.read_package.outputs.version }}
+                  tag_name: ${{ env.version }}
+                  release_name: Release ${{ env.version }}
                   draft: false
                   prerelease: false
 
             - name: Create tar.gz file
-              run: tar -czvf element-${{ steps.read_package.outputs.version }}.tar.gz webapp
+              run: tar -czvf element-${{ env.version }}.tar.gz webapp
 
             - name: Upload artifact
               uses: actions/upload-artifact@v2
               with:
-                  name: element-${{ steps.read_package.outputs.version }}.tar.gz
-                  path: element-${{ steps.read_package.outputs.version }}.tar.gz
+                  name: element-${{ env.version }}.tar.gz
+                  path: element-${{ env.version }}.tar.gz
