@@ -7,6 +7,24 @@
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=element-web&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=element-web)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=element-web&metric=bugs)](https://sonarcloud.io/summary/new_code?id=element-web)
 
+# Greyman Network Web Client
+
+This repository is a rebranded fork of the Element Web client for use with the [Greyman Network](https://greyman.network/). Our goal is to provide a customized experience tailored to our community while adhering to open-source principles.
+
+Licensing and Compliance
+This project is based on the Element Web client, which is licensed under the Apache License 2.0. We have rebranded the application, set the default home server to our own, and made other modifications to better serve our users.
+
+**Key points about our compliance with the Apache License 2.0:**
+
+- **Open Source:** This project remains open source and freely available under the same Apache 2.0 license as the original Element Web client.
+- **Attribution:** Proper attribution to the original Element Web client and its contributors is included, as required by the license.
+- **No Commercial Intent:** This project is not intended for profit. It is provided for free to the community as part of the Greyman Network.
+- **Modifications:** We have made modifications to the original source code, including rebranding and setting the default home server. These changes are clearly documented in the repository, in accordance with the license.
+
+*For more information on the Apache License 2.0, please refer to the [official documentation](https://www.apache.org/licenses/LICENSE-2.0).*
+
+---
+
 # Element
 
 Element (formerly known as Vector and Riot) is a Matrix web client built using the [Matrix
