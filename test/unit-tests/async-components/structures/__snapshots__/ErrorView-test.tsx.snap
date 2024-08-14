@@ -51,12 +51,12 @@ exports[`<UnsupportedBrowserView /> should match snapshot 1`] = `
       <h1
         class="_typography_yh5dq_162 _font-heading-md-semibold_yh5dq_121"
       >
-        Greyman Network does not support this browser
+        Element does not support this browser
       </h1>
       <p
         class="_typography_yh5dq_162 _font-body-lg-regular_yh5dq_78"
       >
-        Greyman Network uses some browser features which are not available in your current browser. Try updating this browser if you're not using the latest version and try again.
+        Element uses some browser features which are not available in your current browser. Try updating this browser if you're not using the latest version and try again.
       </p>
       <p
         class="_typography_yh5dq_162 _font-body-lg-regular_yh5dq_78"
