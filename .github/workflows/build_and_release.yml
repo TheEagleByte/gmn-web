@@ -5,7 +5,7 @@ on:
             - "*"
 
 env:
-    VERSION: ${{ github.ref }}
+    VERSION: ${{ github.ref.replace('refs/tags/', '') }}
 
 jobs:
     build-and-release:
