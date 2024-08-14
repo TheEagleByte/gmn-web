@@ -2,9 +2,6 @@ name: Build and Release
 on:
     workflow_dispatch:
 
-env:
-    VERSION: ${{ steps.read_package.outputs.version }}
-
 jobs:
     build-and-release:
         name: "Build and Release"
@@ -34,12 +31,12 @@ jobs:
               run: yarn build
 
             - name: Create tag
-              run: git tag ${{ env.VERSION }}
-              if: env.VERSION != ''
+              run: git tag ${{ steps.read_package.outputs.version }}
+              if: steps.read_package.outputs.version != ''
 
             - name: Push tag
-              run: git push origin ${{ env.VERSION }}
-              if: env.VERSION != ''
+              run: git push origin ${{ steps.read_package.outputs.version }}
+              if: steps.read_package.outputs.version != ''
 
             - name: Create release
               id: create_release
@@ -47,16 +44,16 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
-                  tag_name: ${{ env.VERSION }}
-                  release_name: Release ${{ env.VERSION }}
+                  tag_name: ${{ steps.read_package.outputs.version }}
+                  release_name: Release ${{ steps.read_package.outputs.version }}
                   draft: false
                   prerelease: false
 
             - name: Create tar.gz file
-              run: tar -czvf element-${{ env.VERSION }}.tar.gz webapp
+              run: tar -czvf element-${{ steps.read_package.outputs.version }}.tar.gz webapp
 
             - name: Upload artifact
               uses: actions/upload-artifact@v2
               with:
-                  name: element-${{ env.VERSION }}.tar.gz
-                  path: element-${{ env.VERSION }}.tar.gz
+                  name: element-${{ steps.read_package.outputs.version }}.tar.gz
+                  path: element-${{ steps.read_package.outputs.version }}.tar.gz
